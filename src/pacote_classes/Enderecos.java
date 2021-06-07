@@ -11,9 +11,15 @@ public class Enderecos extends Estados{
 	private static int cont = 0;
 	
 
-	public Enderecos(String uf, String logradouro, int numero, String quadra, String lote, String bairro) throws Exception {
+	public Enderecos(String logradouro, int numero, String quadra, String lote, String bairro, String uf) throws Exception {
 		// TODO Auto-generated constructor stub
 		super(uf);
+		this.setId_endereco(id_endereco);
+		this.setLogradouro(logradouro);
+		this.setNumero(numero);
+		this.setQuadra(quadra);
+		this.setLote(lote);
+		this.setBairro(bairro);
 		
 	}
 
@@ -102,6 +108,12 @@ public class Enderecos extends Estados{
 	public String toString() {
 		return "Enderecos [id_endereco=" + id_endereco + ", logradouro=" + logradouro + ", numero=" + numero
 				+ ", quadra=" + quadra + ", lote=" + lote + ", bairro=" + bairro + ", uf=" + uf + "]";
+	}
+
+
+	public String printCliente() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
