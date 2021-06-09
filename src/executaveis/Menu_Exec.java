@@ -16,6 +16,7 @@ public class Menu_Exec {
 		String fantasia = null;
 		String logradouro = null;
 		int numero = 0;
+		String numeroK = null;
 		String quadra = null;
 		String lote = null;
 		String bairro = null;
@@ -33,7 +34,16 @@ public class Menu_Exec {
 					razaoSocial = JOptionPane.showInputDialog(null, "Digite a razao social do cliente:");
 					fantasia = JOptionPane.showInputDialog(null, "Digite o nome fantasia do cliente caso houver:");
 					logradouro = JOptionPane.showInputDialog(null, "Digite a cidade do cliente:");
-					numero = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o numero da residencia do cliente:"));
+					
+					numeroK = JOptionPane.showInputDialog(null, "Digite o numero da residencia do cliente:");
+					
+					if(numeroK.matches("[0-9]*")) {
+						numero = Integer.parseInt(numeroK);
+						
+					} else {
+						throw new Exception("O valor informado nao eh um numero.");
+					}
+					
 					quadra = JOptionPane.showInputDialog(null, "Digite a quadra do cliente:");
 					lote = JOptionPane.showInputDialog(null, "Digite o lote do cliente:");
 					bairro = JOptionPane.showInputDialog(null, "Digite o bairro do cliente:");
