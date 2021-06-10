@@ -45,7 +45,11 @@ public class Produto extends Marca{
 		if(valor_prod.equals(0.00)) {
 			throw new Exception("Um produto nao pode ter valor 0.");
 		} else {
-			this.valor_prod = valor_prod;
+			if (getDesconto() != 0.00) {
+				this.valor_prod = valor_prod - (valor_prod*getDesconto());
+			} else {
+				this.valor_prod = valor_prod;
+			}
 		}
 	}
 
