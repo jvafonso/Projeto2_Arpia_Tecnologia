@@ -1,16 +1,27 @@
 package pacote_testes;
+import pacote_classes.Marca;
 import pacote_classes.Produto;
 
 public class teste_produto {
 
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
+		//cenario 
+		//ação
+		//valiação 
 		 String descricao_prod = "Leite";
 		 String descricao_marca = "Calu";
 		 Double valor_prod = 5.60;
 		 Double desconto = 15.00;
 		 
-		 Produto produto  = new Produto(descricao_prod, valor_prod, desconto, descricao_marca);
+		 var marca = new Marca();
+		 marca.setDescricao(descricao_marca);
+		 
+		 
+		 var produto  = new Produto();
+		 produto.setDescricaoProd(descricao_prod);
+		 produto.setDesconto(desconto);
+		 produto.setValor(valor_prod);
+		 produto.setMarca(marca);
 		 
 		 
 		 System.out.println(produto.toString());

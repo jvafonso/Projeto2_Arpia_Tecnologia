@@ -1,54 +1,54 @@
 package pacote_classes;
 
-public class Produto extends Marca{
+import Validations.TypeValidations;
+
+public class Produto{
 	
-	protected int id_produto;
-	protected String descricao_prod;
-	protected Double valor_prod;
-	protected Double desconto;
+	private int id;
+	private String descricaoProd;
+	private Double valor;
+	private Double desconto;
+	private Marca marca;
 	private static int cont = 0;
 
-	public Produto(String descricao_prod, Double valor_prod, Double desconto, String descricao) throws Exception {
-		// TODO Auto-generated constructor stub
-		super(descricao);
-		this.setId_produto(id_produto);
-		this.setDescricao_prod(descricao_prod);
-		this.setValor_prod(valor_prod);
-		this.setDesconto(desconto);
+
+	public int getId() {
+		return id;
 	}
 
-	public int getId_produto() {
-		return id_produto;
+	public void setId(int id) {
+		this.id = cont++;
 	}
 
-	public void setId_produto(int id_produto) {
-		this.id_produto = cont++;
-	}
+	
 
-	public String getDescricao_prod() {
-		return descricao_prod;
-	}
+	
 
-	public void setDescricao_prod(String descricao_prod) throws Exception {
-		if(descricao_prod.isEmpty() || descricao_prod.isBlank() || descricao_prod == null) {
+	public void setDescricaoProd(String descricaoProd) throws Exception {
+		if(!TypeValidations.validString(descricaoProd)) {
 			throw new Exception("Descricao do produto em formato invalido.");
 		} else {
-			this.descricao_prod = descricao_prod;
+			this.descricaoProd = descricaoProd;
 		}
+		this.descricaoProd = descricaoProd;
 	}
 
-	public Double getValor_prod() {
-		return valor_prod;
+	public String getDescricaoProd() {
+		return descricaoProd;
 	}
 
-	public void setValor_prod(Double valor_prod) throws Exception {
-		if(valor_prod.equals(0.00)) {
+	public Double getValor() {
+		return valor;
+	}
+
+	public void setValor(Double valor) throws Exception {
+		if(!TypeValidations.validDouble(valor)) {
 			throw new Exception("Um produto nao pode ter valor 0.");
 		} else {
 			if (getDesconto() != 0.00) {
-				this.valor_prod = valor_prod - (valor_prod*getDesconto());
+				this.valor = valor - (valor*getDesconto());
 			} else {
-				this.valor_prod = valor_prod;
+				this.valor = valor;
 			}
 		}
 	}
@@ -61,11 +61,22 @@ public class Produto extends Marca{
 		this.desconto = desconto/100;
 	}
 
+
+	public Marca getMarca() {
+		return this.marca == null ? new Marca() : this.marca;
+	}
+
+	public void setMarca(Marca marca) {
+		this.marca = marca;
+	}
+
 	@Override
 	public String toString() {
-		return "Produto [id_produto=" + id_produto + ", descricao_prod=" + descricao_prod + ", valor_prod=" + valor_prod
-				+ ", desconto=" + desconto + ", descricao=" + descricao + "]";
+		return "Produto: Id:" + id + "/nNome Produto:" + descricaoProd + "/nValor:" + valor + "/ndesconto aplicado:" + desconto
+				+ "/nMarca:" + marca;
 	}
+	
+	
 	
 	
 	

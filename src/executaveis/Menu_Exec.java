@@ -3,12 +3,14 @@ package executaveis;
 import pacote_classes.Cliente;
 import pacote_classes.Crud;
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 public class Menu_Exec {
 
 	public static void main(String[] args) {
-		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		List<Cliente> clientes = new ArrayList<Cliente>();
 		Crud listaClientes = new Crud();
 		
 		String opcao = null;
@@ -31,6 +33,7 @@ public class Menu_Exec {
 				
 				switch (opcao) {
 				case "1":
+					//Crud.getListaClientes(); //singleton
 					razaoSocial = JOptionPane.showInputDialog(null, "Digite a razao social do cliente:");
 					fantasia = JOptionPane.showInputDialog(null, "Digite o nome fantasia do cliente caso houver:");
 					logradouro = JOptionPane.showInputDialog(null, "Digite a cidade do cliente:");

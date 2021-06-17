@@ -1,13 +1,22 @@
 package pacote_classes;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
 public class Crud {
 	
-	public ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
+	private static ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
 	
-	public ArrayList<Cliente> insertCliente(Cliente p) {
+	
+	
+	
+	public static List<Cliente> getListaClientes() {
+		return listaClientes;
+	}
+
+
+	public List<Cliente> insertCliente(Cliente p) {
 		
 		listaClientes.add(p);
 		return listaClientes;
@@ -15,7 +24,7 @@ public class Crud {
 	}
 	
 	
-	public ArrayList<Cliente> deleteCliente(int id_cl) throws Exception {
+	public List<Cliente> deleteCliente(int id_cl) throws Exception {
 		
 		for(Cliente cl : listaClientes) {
 			if(cl.getId_cliente() == id_cl) {
@@ -28,7 +37,7 @@ public class Crud {
 		
 	}
 	
-	public ArrayList<Cliente> uptadeCliente(int id_cl) throws Exception {
+	public List<Cliente> uptadeCliente(int id_cl) throws Exception {
 				Cliente cl;
 				cl = getCliente(id_cl);
 				
@@ -51,9 +60,6 @@ public class Crud {
 				cl.bairro = bairro;
 				cl.uf = uf;
 		
-			
-		
-	
 		
 		return listaClientes;
 		
