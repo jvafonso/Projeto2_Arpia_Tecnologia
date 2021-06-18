@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import exceptions.ProdutoException;
 import pacote_classes.Marca;
 import pacote_classes.Produto;
 
@@ -12,13 +13,13 @@ public class TratamentosProdutos {
 	
 	private static ArrayList<Produto> listaProdutos = new ArrayList<>();
 	
-	public List<Produto> insertProduto(Produto p) {
+	public static List<Produto> insertProduto(Produto p) {
 		
 		listaProdutos.add(p);
 		return listaProdutos;
 	}
 	
-	public List<Produto> deleteProduto(int idProd) throws Exception {
+	public static List<Produto> deleteProduto(int idProd) {
 		
 		for (Produto lp : listaProdutos) {
 			if(lp.getId() == idProd) {
@@ -26,19 +27,19 @@ public class TratamentosProdutos {
 				return listaProdutos;
 			}
 		}
-		throw new Exception ("Produto não existe.");
+		throw new ProdutoException();
 	}
 	
-	public Produto buscaProduto(int idProd) throws Exception {
+	public static Produto buscaProduto(int idProd){
 		for (Produto lp : listaProdutos) {
 			if(lp.getId() == idProd) {
 				return lp;
 			}
 		}
-		throw new Exception ("Produto não existe.");
+		throw new ProdutoException();
 	}
 	
-	public List<Produto> updateProduto(int idProd) throws Exception {
+	public static List<Produto> updateProduto(int idProd){
 		Produto pr;
 		pr = buscaProduto(idProd);
 		

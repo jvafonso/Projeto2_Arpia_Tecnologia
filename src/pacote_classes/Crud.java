@@ -4,12 +4,14 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import exceptions.RegraException;
+
 public class Crud {
 	
-	private static ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
+	private static ArrayList<Cliente> listaClientes = new ArrayList<>();
 	
 	
-	
+	private static String  fraseErro = "Cliente não existe.";
 	
 	public static List<Cliente> getListaClientes() {
 		return listaClientes;
@@ -24,28 +26,28 @@ public class Crud {
 	}
 	
 	
-	public List<Cliente> deleteCliente(int id_cl) throws Exception {
+	public List<Cliente> deleteCliente(int idCl){
 		
 		for(Cliente cl : listaClientes) {
-			if(cl.getId_cliente() == id_cl) {
+			if(cl.getId_cliente() == idCl) {
 				listaClientes.remove(cl);
 				return listaClientes;
 			}
 		}
-		throw new Exception ("Cliente não existe.");
+		throw new RegraException (fraseErro);
 	
 		
 	}
 	
-	public List<Cliente> uptadeCliente(int id_cl) throws Exception {
+	public List<Cliente> uptadeCliente(int idCl){
 				Cliente cl;
-				cl = getCliente(id_cl);
+				cl = getCliente(idCl);
 				
 				
 				String razaoSocial = JOptionPane.showInputDialog(null, "Digite a nova razao social do cliente:");
 				String fantasia = JOptionPane.showInputDialog(null, "Digite o novo nome fantasia do cliente caso houver:");
 				String logradouro = JOptionPane.showInputDialog(null, "Digite a nova cidade do cliente:");
-				int numero = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o  novo numero da residencia do cliente:"));
+				var numero = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o  novo numero da residencia do cliente:"));
 				String quadra = JOptionPane.showInputDialog(null, "Digite a nova quadra do cliente:");
 				String lote = JOptionPane.showInputDialog(null, "Digite o novo lote do cliente:");
 				String bairro = JOptionPane.showInputDialog(null, "Digite o novo bairro do cliente:");
@@ -66,24 +68,24 @@ public class Crud {
 		
 	}
 	
-	public String showCliente(int id_cl) throws Exception {
+	public String showCliente(int idCl) {
 		for(Cliente cl : listaClientes) {
-			if(cl.getId_cliente() == id_cl) {
+			if(cl.getId_cliente() == idCl) {
 				return cl.printCliente();
 			} 
 		}
-		throw new Exception ("Cliente não existe.");
+		throw new RegraException (fraseErro);
 		
 		
 	}
 	
-	public Cliente getCliente(int id_cl) throws Exception {
+	public Cliente getCliente(int idCl) {
 		for(Cliente cl : listaClientes) {
-			if(cl.getId_cliente() == id_cl) {
+			if(cl.getId_cliente() == idCl) {
 				return cl;
 			} 
 		}
-		throw new Exception ("Cliente não existe.");
+		throw new RegraException (fraseErro);
 		
 		
 	}

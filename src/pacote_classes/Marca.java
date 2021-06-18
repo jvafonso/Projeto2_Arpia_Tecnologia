@@ -1,6 +1,7 @@
 package pacote_classes;
 
 import Validations.TypeValidations;
+import exceptions.RegraException;
 
 public class Marca{
 	
@@ -34,9 +35,9 @@ public class Marca{
 
 
 
-	public void setDescricao(String descricao) throws Exception {
+	public void setDescricao(String descricao){
 		if(!TypeValidations.validString(descricao)) {
-			throw new Exception("A descricao esta em formato invalido.");
+			throw new RegraException("A descricao esta em formato invalido.");
 		} else {
 			this.descricao = descricao;
 		}

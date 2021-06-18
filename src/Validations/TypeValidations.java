@@ -8,7 +8,7 @@ public class TypeValidations {
 	}
 	
 	public static boolean validString (String frase) {
-		if(frase.isBlank() || frase.isEmpty() || frase.equals(null)) {
+		if(frase.isBlank() || frase.isEmpty()) {
 			return false;
 		} else {
 			return true;

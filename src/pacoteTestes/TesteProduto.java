@@ -1,8 +1,8 @@
-package pacote_testes;
+package pacoteTestes;
 import pacote_classes.Marca;
 import pacote_classes.Produto;
 
-public class teste_produto {
+public class TesteProduto {
 
 	public static void main(String[] args) throws Exception {
 		//cenario 

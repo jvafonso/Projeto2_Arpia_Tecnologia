@@ -1,28 +1,27 @@
-package pacote_testes;
+package pacoteTestes;
 import pacote_classes.Cliente;
 
 import java.util.ArrayList;
 
-public class teste_cliente {
+public class TesteCliente {
 
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
-		ArrayList<Cliente> clienteS = new ArrayList<Cliente>();
+		ArrayList<Cliente> clienteS = new ArrayList<>();
 		
-		String nome = "Joao Vitor Afonso";
-		String nome_fantasia = "JvAfonso";
-		String logradouro = "Uberlandia";
-		int numero = 46;
-		String quadra = "q2";
-		String lote = "l2";
-		String bairro = "Vigilato";
-		String uf = "MG";
+		var nome = "Joao Vitor Afonso";
+		var nomeFantasia = "JvAfonso";
+		var logradouro = "Uberlandia";
+		var numero = 46;
+		var quadra = "q2";
+		var lote = "l2";
+		var bairro = "Vigilato";
+		var uf = "MG";
 		
-		Cliente cliente1 = new Cliente(nome, nome_fantasia, logradouro, numero, quadra, lote,bairro, uf);
+		var cliente1 = new Cliente(nome, nomeFantasia, logradouro, numero, quadra, lote,bairro, uf);
 		clienteS.add(cliente1);
 		
 		nome = "Ana Carolina";
-		nome_fantasia = "";
+		nomeFantasia = "";
 		logradouro = "Ribeirao";
 		numero = 102;
 		quadra = "q222";
@@ -30,7 +29,7 @@ public class teste_cliente {
 		bairro = "Gaveia Sul";
 		uf = "SP";
 		
-		Cliente cliente2 = new Cliente(nome, nome_fantasia, logradouro, numero, quadra, lote,bairro, uf);
+		var cliente2 = new Cliente(nome, nomeFantasia, logradouro, numero, quadra, lote,bairro, uf);
 		clienteS.add(cliente2);
 		
 		

@@ -1,6 +1,7 @@
 package pacote_classes;
 
 import Validations.TypeValidations;
+import exceptions.RegraException;
 
 public class Produto{
 	
@@ -9,7 +10,7 @@ public class Produto{
 	private Double valor;
 	private Double desconto;
 	private Marca marca;
-	private static int cont = 0;
+	private int cont = 0;
 
 
 	public int getId() {
@@ -24,9 +25,9 @@ public class Produto{
 
 	
 
-	public void setDescricaoProd(String descricaoProd) throws Exception {
+	public void setDescricaoProd(String descricaoProd){
 		if(!TypeValidations.validString(descricaoProd)) {
-			throw new Exception("Descricao do produto em formato invalido.");
+			throw new RegraException("Descricao do produto em formato invalido.");
 		} else {
 			this.descricaoProd = descricaoProd;
 		}
@@ -41,9 +42,9 @@ public class Produto{
 		return valor;
 	}
 
-	public void setValor(Double valor) throws Exception {
+	public void setValor(Double valor) {
 		if(!TypeValidations.validDouble(valor)) {
-			throw new Exception("Um produto nao pode ter valor 0.");
+			throw new RegraException("Um produto nao pode ter valor 0.");
 		} else {
 			if (getDesconto() != 0.00) {
 				this.valor = valor - (valor*getDesconto());

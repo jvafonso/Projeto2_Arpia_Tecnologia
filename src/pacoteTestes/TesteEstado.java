@@ -1,11 +1,11 @@
-package pacote_testes;
+package pacoteTestes;
 import pacote_classes.Estados;
 
 import java.util.ArrayList;
 
 
 
-public class teste_estado {
+public class TesteEstado {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
