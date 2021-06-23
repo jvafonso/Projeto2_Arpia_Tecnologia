@@ -31,7 +31,6 @@ public class Produto{
 		} else {
 			this.descricaoProd = descricaoProd;
 		}
-		this.descricaoProd = descricaoProd;
 	}
 
 	public String getDescricaoProd() {
@@ -47,7 +46,7 @@ public class Produto{
 			throw new RegraException("Um produto nao pode ter valor 0.");
 		} else {
 			if (getDesconto() != 0.00) {
-				this.valor = valor - (valor*getDesconto());
+				this.valor = valor - getDesconto();
 			} else {
 				this.valor = valor;
 			}
@@ -59,7 +58,7 @@ public class Produto{
 	}
 
 	public void setDesconto(Double desconto) {
-		this.desconto = desconto/100;
+		this.desconto = desconto;
 	}
 
 

@@ -11,7 +11,9 @@ import pacote_classes.Produto;
 
 public class TratamentosProdutos {
 	
-	private static ArrayList<Produto> listaProdutos = new ArrayList<>();
+	private TratamentosProdutos() {}
+	
+	public static final List<Produto> listaProdutos = new ArrayList<>();
 	
 	public static List<Produto> insertProduto(Produto p) {
 		
@@ -37,6 +39,15 @@ public class TratamentosProdutos {
 			}
 		}
 		throw new ProdutoException();
+	}
+	
+	public static boolean verificaProduto(int idProd) {
+		for (Produto lp : listaProdutos) {
+			if(lp.getId() == idProd) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public static List<Produto> updateProduto(int idProd){

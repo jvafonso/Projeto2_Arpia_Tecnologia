@@ -4,7 +4,7 @@ package exceptions;
 public class ProdutoException extends RegraException{
 
 	public ProdutoException() {
-		super("O produto não exite");
+		super("O produto não existe");
 	}
 	
 	

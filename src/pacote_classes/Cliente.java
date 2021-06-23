@@ -9,7 +9,6 @@ public class Cliente extends Enderecos{
 	private static int cont = 0;
 	
 	public Cliente(String razaoSocial, String fantasia, String logradouro, int numero, String quadra, String lote, String bairro, String uf) throws Exception {
-		// TODO Auto-generated constructor stub
 		super(logradouro, numero, quadra, lote, bairro, uf);
 		this.setId_cliente(id_cliente);
 		this.setRazaoSocial(razaoSocial);
@@ -22,7 +21,7 @@ public class Cliente extends Enderecos{
 	}
 
 	public void setRazaoSocial(String razaoSocial) throws Exception {
-		if(razaoSocial.isEmpty() || razaoSocial.isBlank() || razaoSocial.equals(null)) {
+		if(razaoSocial.isEmpty() || razaoSocial.isBlank()) {
 			throw new Exception("O nome digitado nao eh valido.");
 		} else {
 			this.razaoSocial = razaoSocial;

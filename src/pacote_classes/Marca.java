@@ -10,12 +10,6 @@ public class Marca{
 	private  int cont = 0;
 	
 
-	
-
-
-
-
-
 	public int getId() {
 		return id;
 	}
