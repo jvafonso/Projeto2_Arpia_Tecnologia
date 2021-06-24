@@ -10,15 +10,14 @@ public class Produto{
 	private Double valor;
 	private Double desconto;
 	private Marca marca;
-	private int cont = 0;
-
+	
 
 	public int getId() {
 		return id;
 	}
 
 	public void setId(int id) {
-		this.id = cont++;
+		this.id = id;
 	}
 
 	
@@ -46,7 +45,7 @@ public class Produto{
 			throw new RegraException("Um produto nao pode ter valor 0.");
 		} else {
 			if (getDesconto() != 0.00) {
-				this.valor = valor - getDesconto();
+					this.valor = valor - getDesconto();
 			} else {
 				this.valor = valor;
 			}
@@ -70,10 +69,9 @@ public class Produto{
 		this.marca = marca;
 	}
 
-	@Override
-	public String toString() {
-		return "Produto: Id:" + id + "/nNome Produto:" + descricaoProd + "/nValor:" + valor + "/ndesconto aplicado:" + desconto
-				+ "/nMarca:" + marca;
+	public String printProduto() {
+		return "Id:" + id + "\t  Produto:" + descricaoProd + "\nValor:" + valor + "\t  Desconto aplicado:" + desconto
+				+ "\nMarca:" + marca.getDescricao();
 	}
 	
 	

@@ -1,5 +1,7 @@
 package pacote_classes;
 
+import exceptions.RegraException;
+
 public class Cliente extends Enderecos{
 
 	
@@ -8,7 +10,7 @@ public class Cliente extends Enderecos{
 	protected String fantasia;
 	private static int cont = 0;
 	
-	public Cliente(String razaoSocial, String fantasia, String logradouro, int numero, String quadra, String lote, String bairro, String uf) throws Exception {
+	public Cliente(String razaoSocial, String fantasia, String logradouro, int numero, String quadra, String lote, String bairro, String uf){
 		super(logradouro, numero, quadra, lote, bairro, uf);
 		this.setId_cliente(id_cliente);
 		this.setRazaoSocial(razaoSocial);
@@ -20,9 +22,9 @@ public class Cliente extends Enderecos{
 		return razaoSocial;
 	}
 
-	public void setRazaoSocial(String razaoSocial) throws Exception {
+	public void setRazaoSocial(String razaoSocial) {
 		if(razaoSocial.isEmpty() || razaoSocial.isBlank()) {
-			throw new Exception("O nome digitado nao eh valido.");
+			throw new RegraException("O nome digitado nao eh valido.");
 		} else {
 			this.razaoSocial = razaoSocial;
 		}
@@ -33,9 +35,9 @@ public class Cliente extends Enderecos{
 		return fantasia;
 	}
 
-	public void setFantasia(String fantasia) throws Exception {
+	public void setFantasia(String fantasia){
 		if(fantasia.equals(null)) {
-			throw new Exception("Erro ao receber o nome fantasia");
+			throw new RegraException("Erro ao receber o nome fantasia");
 		}
 		this.fantasia = fantasia;
 	}

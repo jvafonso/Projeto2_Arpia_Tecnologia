@@ -9,16 +9,14 @@ public class ItemPedido {
 	private int id;
 	private int idProduto;
 	private int quantidade;
-	private Double valor;
 	private Double desconto;
-	private int cont = 0;
 	
 	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
-		this.id = cont++;
+		this.id = id;
 	}
 	
 	public int getIdProduto() {
@@ -47,10 +45,7 @@ public class ItemPedido {
 	
 	
 	public Double getValor() {
-		return valor;
-	}
-	public void setValor() {
-		this.valor = TratamentosProdutos.buscaProduto(getIdProduto()).getValor() * getQuantidade();
+		return TratamentosProdutos.buscaProduto(getIdProduto()).getValor() * getQuantidade();
 	}
 	public Double getDesconto() {
 		return desconto;
@@ -66,11 +61,11 @@ public class ItemPedido {
 		return getValor();
 	}
 	
-	private String nomeProd = TratamentosProdutos.buscaProduto(getIdProduto()).getDescricaoProd();
-	private Double valorProd = TratamentosProdutos.buscaProduto(getIdProduto()).getValor();
+	//private String nomeProd = TratamentosProdutos.buscaProduto(getIdProduto()).getDescricaoProd();
+	//private Double valorProd = TratamentosProdutos.buscaProduto(getIdProduto()).getValor();
 	
 	public String printItemPedido() {
-		return "" + getId() + "/t" + nomeProd + "/t" +getQuantidade() + "/t" + valorProd + "/t" + getDesconto() + "/t" + valorItem();
+		return "" + getId() + "  \t" + TratamentosProdutos.buscaProduto(getIdProduto()).getDescricaoProd() + "  \t" +getQuantidade() + "  \t" + TratamentosProdutos.buscaProduto(getIdProduto()).getValor() + "  \t" + getDesconto() + "  \t" + valorItem();
 	}
 	
 	

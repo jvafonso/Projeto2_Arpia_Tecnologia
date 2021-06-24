@@ -1,5 +1,6 @@
 package pacote_classes;
 
+import exceptions.RegraException;
 
 public class Estados {
 	
@@ -8,8 +9,7 @@ public class Estados {
 	protected String uf;
 	private static int cont = 0;
 	
-	public Estados(String uf) throws Exception {
-		// TODO Auto-generated constructor stub
+	public Estados(String uf)  {
 		this.setId(id_estado);
 		this.setUf(uf);
 		this.setNome(nome_estado);
@@ -27,7 +27,7 @@ public class Estados {
 		return nome_estado;
 	}
 
-	public void setNome(String nome) throws Exception {
+	public void setNome(String nome){
 		if(getUf().equals("SP") || getUf().equals("sp")) {
 			this.nome_estado = "São Paulo";
 		} else if(getUf().equals("RJ") || getUf().equals("rj")){
@@ -83,7 +83,7 @@ public class Estados {
 		} else if(getUf().equals("TO") || getUf().equals("to")){
 			this.nome_estado = "Tocantins";
 		} else {
-			throw new Exception("A UF digitada não corresponde a nenhum estado brasileiro.");
+			throw new RegraException("A UF digitada não corresponde a nenhum estado brasileiro.");
 		}
 	} 
 
@@ -91,9 +91,9 @@ public class Estados {
 		return uf;
 	}
 
-	public void setUf(String uf) throws Exception {
-		if(uf.isEmpty() || uf.isBlank() || uf.equals(null)) {
-			throw new Exception("A abreviação do estado informado esta vazio ou é invalida");
+	public void setUf(String uf){
+		if(uf.isEmpty() || uf.isBlank()) {
+			throw new RegraException("A abreviação do estado informado esta vazio ou é invalida");
 		} else {
 			this.uf = uf;
 		}

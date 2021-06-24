@@ -7,7 +7,6 @@ public class Marca{
 	
 	private int id;
 	private String descricao;
-	private  int cont = 0;
 	
 
 	public int getId() {
@@ -17,7 +16,7 @@ public class Marca{
 
 
 	public void setId(int id) {
-		this.id = cont++;
+		this.id = id;
 	}
 
 
