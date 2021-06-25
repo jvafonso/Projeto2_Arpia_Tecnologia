@@ -8,7 +8,7 @@ public class Cliente extends Enderecos{
 	protected int id_cliente;
 	protected String razaoSocial;
 	protected String fantasia;
-	private static int cont = 0;
+	private static int cont = 1;
 	
 	public Cliente(String razaoSocial, String fantasia, String logradouro, int numero, String quadra, String lote, String bairro, String uf){
 		super(logradouro, numero, quadra, lote, bairro, uf);

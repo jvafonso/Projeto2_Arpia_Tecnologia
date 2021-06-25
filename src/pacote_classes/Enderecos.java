@@ -10,7 +10,7 @@ public class Enderecos extends Estados{
 	protected String quadra;
 	protected String lote;
 	protected String bairro;
-	private static int cont = 0;
+	private static int cont = 1;
 	
 
 	public Enderecos(String logradouro, int numero, String quadra, String lote, String bairro, String uf) {

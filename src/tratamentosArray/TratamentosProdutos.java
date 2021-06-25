@@ -11,8 +11,8 @@ import pacote_classes.Produto;
 
 public class TratamentosProdutos {
 	
-	static int cont = 0;
-	static int contM = 0;
+	static int cont = 1;
+	static int contM = 1;
 	private TratamentosProdutos() {}
 	
 	public static final List<Produto> listaProdutos = new ArrayList<>();

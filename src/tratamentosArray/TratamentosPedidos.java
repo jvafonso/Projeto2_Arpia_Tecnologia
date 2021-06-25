@@ -11,7 +11,7 @@ import pacote_classes.Pedido;
 
 public class TratamentosPedidos {
 	
-	static int cont = 0;
+	static int cont = 1;
 	private TratamentosPedidos() {}
 	
 	public static final List<Pedido> listaPedidos = new ArrayList<>();

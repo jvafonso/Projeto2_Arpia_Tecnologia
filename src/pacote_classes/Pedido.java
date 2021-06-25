@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import Validations.DoubleFormatValidation;
 import enums.statusPedido;
 import exceptions.*;
 import tratamentosArray.TratamentosCliente;
@@ -18,7 +19,7 @@ public class Pedido {
 	private Double valorTotal;
 	private Double frete;
 	
-	static int cont = 0;
+	static int cont = 1;
 	
 	private List<ItemPedido> listaItemPedido = new ArrayList<>();
 
@@ -172,8 +173,8 @@ public class Pedido {
 	
 	public String printPedido() {
 		return "Pedido: " + getId() + "\n" +TratamentosCliente.getCliente(getIdCliente()).printCliente() +
-				"\nStatus: " + getStatus() + "\t  Valor Total:" + getValorTotal() + "\nDesconto: " + getDesconto() +
-				"\t  Frete: " + this.frete + "\nLista de Item do pedido:" + "\nID  /tNome do Produdo  /tQuantidade  /tValor  /tDesconto  /tValorTotal" + 
+				"\nStatus: " + getStatus() + "\t  Valor Total:" + DoubleFormatValidation.doubleFormat(getValorTotal()) + "\nDesconto: " + getDesconto() +
+				"\t  Frete: " + DoubleFormatValidation.doubleFormat(this.frete) + "\nLista de Item do pedido:" + "\nID  /tNome do Produdo  /tQuantidade  /tValor  /tDesconto  /tValorTotal" + 
 				"\n" + printListaItem();
 	}
 	

@@ -1,5 +1,6 @@
 package pacote_classes;
 
+import Validations.DoubleFormatValidation;
 import Validations.TypeValidations;
 import exceptions.*;
 import tratamentosArray.TratamentosProdutos;
@@ -10,6 +11,7 @@ public class ItemPedido {
 	private int idProduto;
 	private int quantidade;
 	private Double desconto;
+	
 	
 	
 	public int getId() {
@@ -65,7 +67,7 @@ public class ItemPedido {
 	//private Double valorProd = TratamentosProdutos.buscaProduto(getIdProduto()).getValor();
 	
 	public String printItemPedido() {
-		return "" + getId() + "  \t" + TratamentosProdutos.buscaProduto(getIdProduto()).getDescricaoProd() + "  \t" +getQuantidade() + "  \t" + TratamentosProdutos.buscaProduto(getIdProduto()).getValor() + "  \t" + getDesconto() + "  \t" + valorItem();
+		return "" + getId() + "  \t" + TratamentosProdutos.buscaProduto(getIdProduto()).getDescricaoProd() + "  \t" +getQuantidade() + "  \t" + DoubleFormatValidation.doubleFormat(TratamentosProdutos.buscaProduto(getIdProduto()).getValor()) + "  \t" + getDesconto() + "  \t" + valorItem();
 	}
 	
 	

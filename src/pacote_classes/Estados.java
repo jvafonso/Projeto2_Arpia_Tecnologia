@@ -7,7 +7,7 @@ public class Estados {
 	protected int id_estado;
 	protected String nome_estado;
 	protected String uf;
-	private static int cont = 0;
+	private static int cont = 1;
 	
 	public Estados(String uf)  {
 		this.setId(id_estado);
